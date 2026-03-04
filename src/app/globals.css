@@ -2,25 +2,89 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0a;
+  --gold: #c9a96e;
+  --gold-600: #b69158;
+  --overlay: rgba(10, 10, 10, 0.6);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold: var(--gold);
+  --color-gold-600: var(--gold-600);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f6f6f6;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-inter),
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Arial;
+  scroll-behavior: auto;
+}
+
+/* Acessibilidade */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.skip-to-content {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--gold);
+  color: #0a0a0a;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 6px 6px;
+  z-index: 9999;
+}
+.skip-to-content:focus {
+  left: 0.5rem;
+}
+
+/* Navbar glass */
+.nav-glass {
+  backdrop-filter: saturate(180%) blur(16px);
+  background-color: rgba(10, 10, 10, 0.65);
+}
+
+/* cursor custom removido por solicitação */
+
+/* WhatsApp pulse */
+.pulse {
+  position: relative;
+}
+.pulse::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  border: 2px solid #25d366;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
