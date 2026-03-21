@@ -10,7 +10,7 @@ const CATEGORIAS = [
     title: "Carros",
     brands: "Moura, Zetta, Heliar e mais.",
     image:
-      "/carro.png", // Carro SUV/Sedan
+      "/Carro.png", // Carro SUV/Sedan
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",
   },
   {
@@ -24,7 +24,7 @@ const CATEGORIAS = [
     title: "Motos",
     brands: "Moura, Route, Heliar e Pioneiro",
     image:
-      "/moto.png", // Moto
+      "/Moto.png", // Moto
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",
   },
 ];
