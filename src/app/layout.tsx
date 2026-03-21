@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import LenisProvider from "../components/LenisProvider";
-import LoadingScreen from "../components/LoadingScreen";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +33,7 @@ export default function RootLayout({
         <a href="#conteudo" className="skip-to-content">
           Ir para o conteúdo
         </a>
-        <LenisProvider>{children}</LenisProvider>
+        {children}
         <Script id="gsap-register">{`
           // reservado para futuras inicializações se necessário
         `}</Script>

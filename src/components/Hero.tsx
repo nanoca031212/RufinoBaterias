@@ -2,27 +2,28 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { images } from "@/lib/images";
+
 import {
   letterStagger,
   letterAnim,
   fadeInUp,
   staggerContainer,
 } from "@/lib/animations";
-import { SITE } from "@/lib/constants";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function SplitText({ text }: { text: string }) {
+function SplitText({ text, className }: { text: string; className?: string }) {
   return (
     <motion.span
       variants={letterStagger(0.05)}
       initial="hidden"
       animate="show"
-      className="inline-block"
+      className={`inline-block ${className || ""}`}
     >
       {text.split("").map((c, i) => (
         <motion.span
@@ -60,76 +61,88 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Abertura"
-      className="relative min-h-[100svh] w-full overflow-hidden"
+      className="relative min-h-[100svh] w-full overflow-hidden flex flex-col items-center pt-32 md:pt-0 md:flex-row md:items-center"
     >
-      <div
-        ref={bgRef}
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${images.heroBg})`,
-          backgroundPositionY: "0%",
-        }}
+      <div ref={bgRef} className="absolute inset-0 bg-cover bg-center " />
+      <Image
+        src="/backgroundHero.png"
+        alt="Fundo do Hero"
+        fill
+        priority
+        className="object-cover object-center brightness-[0.25]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,10,10,.55),rgba(10,10,10,.85))]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent border-b-[#FFCC00] border-b-1" />
+      
+      {/* Luz focal */}
+      <div className="absolute top-1/2 left-1/2 md:left-2/3 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="relative z-10 mx-auto flex h-full min-h-[100svh] max-w-7xl flex-col justify-center px-6 pt-28 items-center text-center md:items-start md:text-left">
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          animate="show"
-          className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-black/30 px-4 py-2 text-sm text-zinc-200 backdrop-blur"
-        >
-          <span>⭐</span>
-          <span>300+ Casos Resolvidos</span>
-          <span className="text-zinc-500">|</span>
-          <span>{SITE.oab}</span>
-        </motion.div>
-
-        <motion.h1
-          className="text-white font-[var(--font-playfair)] text-5xl md:text-6xl leading-tight"
-          variants={staggerContainer(0.2)}
-          initial="hidden"
-          animate="show"
-        >
-          <div>
-            <SplitText text="Justiça que" />
-          </div>
-          <div className="text-gold">
-            <SplitText text="Transforma Vidas" />
-          </div>
-        </motion.h1>
-
-        <motion.p
-          variants={fadeInUp}
-          initial="hidden"
-          animate="show"
-          className="mt-5 max-w-xl text-lg text-zinc-200"
-        >
-          Atendimento exclusivo e estratégico com o {SITE.nome}
-        </motion.p>
-
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          animate="show"
-          className="mt-8 flex flex-wrap items-center gap-4"
-        >
-          <a
-            href="#contato"
-            className="rounded-full bg-gold px-6 py-3 text-black font-medium hover:bg-[var(--gold-600)] transition-colors"
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 flex flex-col items-center text-center md:grid md:grid-cols-2 md:items-center md:text-left gap-12">
+        <div className="flex flex-col items-center md:items-start">
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="show"
+            className="inline-flex mb-6 items-center gap-3 rounded-full border border-gold/50 bg-black/60 px-5 py-2 text-xs font-semibold text-zinc-200 backdrop-blur-sm"
           >
-            {SITE.cta}
-          </a>
-          <a
-            href="#areas"
-            className="rounded-full border border-white/25 px-6 py-3 text-white hover:bg-white/10 transition-colors"
-          >
-            Conhecer Atuação
-          </a>
-        </motion.div>
+            <span>Frete Gratis Para Toda Região</span>
+          </motion.div>
 
-        {/* logos de credibilidade removidos por solicitação */}
+          <motion.h1
+            className="text-white font-bold text-[26px] md:text-5xl lg:text-6xl tracking-tight leading-[1.2] md:leading-[1.1] mb-3"
+            variants={staggerContainer(0.2)}
+            initial="hidden"
+            animate="show"
+          >
+            <div className="overflow-hidden mb-1 whitespace-nowrap">
+              <SplitText text="Levamos sua bateria nova" />
+            </div>
+            <div className="text-gold overflow-hidden text-[0.85em] md:text-[0.85em] whitespace-nowrap">
+              <SplitText text="até você em poucos minutos!" />
+            </div>
+          </motion.h1>
+
+          <motion.p
+            variants={fadeInUp}
+            initial="hidden"
+            animate="show"
+            className="text-zinc-400 text-base md:text-lg max-w-2xl md:max-w-xl mb-4 leading-relaxed"
+          >
+            Garanta uma bateria nova, com instalação rápida e preço justo sem
+            perder tempo e sem correr riscos de ficar na mão.
+          </motion.p>
+
+          <motion.div variants={fadeInUp} initial="hidden" animate="show" className="mb-12 md:mb-0">
+            <a
+              href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base md:text-lg font-bold text-black hover:bg-gold/90 transition-all active:scale-95 shadow-[0_0_25px_rgba(255,204,0,0.3)]"
+            >
+              Garanta sua bateria agora
+              <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Espaço para o Pablo no grid desktop */}
+        <div className="hidden md:block h-full" />
       </div>
+
+      {/* Pablo - Mobile: Centralizado / Desktop: Lateral */}
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        animate="show"
+        className="relative z-10 w-full max-w-lg md:max-w-none h-[400px] md:h-[650px] mt-auto md:absolute md:bottom-0 md:right-[8%] md:w-[35%] pointer-events-none"
+      >
+        <Image
+          src="/Pablo.svg"
+          alt="Pablo - Especialista em Baterias"
+          fill
+          className="object-contain object-bottom drop-shadow-[0_0_50px_rgba(255,204,0,0.1)]"
+          priority
+        />
+      </motion.div>
     </section>
   );
 }

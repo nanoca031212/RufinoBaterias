@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --gold: #c9a96e;
-  --gold-600: #b69158;
+  --gold: #ffcc00;
+  --gold-600: #e6b800;
   --overlay: rgba(10, 10, 10, 0.6);
 }
 

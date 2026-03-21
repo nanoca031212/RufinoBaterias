@@ -1,64 +1,102 @@
 "use client";
 
 import Link from "next/link";
-import { SITE, AREAS } from "@/lib/constants";
-import { Instagram, Linkedin, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { Instagram, Facebook, Phone, MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-zinc-300" aria-labelledby="rodape-title">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2">
-            <h3 id="rodape-title" className="text-white text-xl font-[var(--font-playfair)]">
-              {SITE.escritorio}
-            </h3>
-            <p className="mt-2 text-sm">{SITE.slogan}</p>
-            <p className="mt-4 text-sm">OAB: {SITE.oab}</p>
+    <footer className="bg-[#F8F9FA] text-zinc-600 py-16 border-t border-zinc-200">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="flex flex-col gap-6">
+            <Link href="/" className="inline-block relative h-10 w-24 overflow-visible">
+              <div className="absolute inset-0 flex items-center">
+                <Image
+                  src="/RufinoLogoBranca.svg"
+                  alt="Rufino Baterias"
+                  width={120}
+                  height={40}
+                  className="-rotate-90 h-auto w-[100px] "
+                />
+              </div>
+            </Link>
+            <p className="text-sm leading-relaxed max-w-xs text-zinc-500">
+              Especialistas em baterias automotivas com entrega rápida e instalação profissional em toda a região.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="text-zinc-400 hover:text-gold transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-zinc-400 hover:text-gold transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
           </div>
-          <div>
-            <div className="text-white font-semibold">Áreas de Atuação</div>
-            <ul className="mt-3 space-y-2 text-sm">
-              {AREAS.map((a) => (
-                <li key={a.title}><a href="#areas" className="hover:text-white">{a.title}</a></li>
-              ))}
+
+          {/* Links */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-zinc-900 font-bold tracking-tight">Navegação</h4>
+            <ul className="flex flex-col gap-3 text-sm">
+              <li><a href="#hero" className="hover:text-gold transition-colors font-medium">Início</a></li>
+              <li><a href="#baterias" className="hover:text-gold transition-colors font-medium">Baterias</a></li>
+              <li><a href="#servicos" className="hover:text-gold transition-colors font-medium">Serviços</a></li>
+              <li><a href="#entrega" className="hover:text-gold transition-colors font-medium">Entrega</a></li>
             </ul>
           </div>
-          <div>
-            <div className="text-white font-semibold">Contato</div>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>Segunda a Sexta: 9h às 18h</li>
-              <li>{SITE.cidade}</li>
-              <li><a href="tel:+5500000000000" className="hover:text-white">+55 (00) 00000-0000</a></li>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-zinc-900 font-bold tracking-tight">Contato</h4>
+            <ul className="flex flex-col gap-4 text-sm">
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-gold" />
+                <a 
+                  href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-medium hover:text-gold transition-colors"
+                >
+                  (31) 9650-7294
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-gold" />
+                <span className="font-medium">contato@rufinobaterias.com.br</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-gold mt-0.5" />
+                <span className="font-medium">Praça Doutor Senra, 18 - Centro<br />Pedro leopoldo - MG</span>
+              </li>
             </ul>
-            <div className="mt-4 flex items-center gap-3">
-              <Link href="#" aria-label="Instagram">
-                <Instagram className="hover:text-white" />
-              </Link>
-              <Link href="#" aria-label="LinkedIn">
-                <Linkedin className="hover:text-white" />
-              </Link>
-              <Link href="#" aria-label="WhatsApp">
-                <MessageCircle className="hover:text-white" />
-              </Link>
+          </div>
+
+          {/* Newsletter/Hours */}
+          <div className="flex flex-col gap-6">
+            <h4 className="text-zinc-900 font-bold tracking-tight">Horário</h4>
+            <div className="text-sm">
+              <p className="mb-2 font-medium">Segunda a Sexta: 08:00 - 18:00</p>
+              <p className="mb-2 font-medium">Sábado: 08:00 - 14:00</p>
+              <p className="text-gold font-bold mt-4 flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+                </span>
+                Atendimento de Emergência 24h
+              </p>
             </div>
           </div>
         </div>
-        <div className="mt-10 border-t border-white/10 pt-4 text-xs text-zinc-500">
-          © {new Date().getFullYear()} {SITE.escritorio}. Todos os direitos reservados.
+
+        <div className="pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-zinc-500">
+          <p>© {new Date().getFullYear()} Rufino Baterias. Todos os direitos reservados.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-gold transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-gold transition-colors">Termos de Uso</a>
+          </div>
         </div>
-      </div>
-      <div className="h-64 w-full">
-        <iframe
-          title="Localização no Google Maps"
-          aria-label="Mapa com localização do escritório"
-          className="h-full w-full"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.9185064011375!2d-46.6388!3d-23.5021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRXN0csOjaW8!5e0!3m2!1spt-BR!2sBR!4v1700000000000"
-        />
       </div>
     </footer>
   );
 }
-
