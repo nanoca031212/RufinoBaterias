@@ -18,7 +18,7 @@ const SERVICOS = [
   },
   {
     title: "Limpeza de terminais e cabos",
-    image: "/limpeza.jpg",
+    image: "/Limpeza.jpg",
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
   },
   {
