@@ -76,7 +76,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h4 className="text-zinc-900 font-bold tracking-tight">Horário</h4>
             <div className="text-sm">
-              <p className="mb-2 font-medium">Segunda a Sexta: 08:00 - 18:00</p>
+              <p className="mb-2 font-medium">Segunda a Sexta: 07:30 - 18:00</p>
               <p className="mb-2 font-medium">Sábado: 08:00 - 14:00</p>
               <p className="text-gold font-bold mt-4 flex items-center gap-2">
                 <span className="relative flex h-2 w-2">

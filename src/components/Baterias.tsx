@@ -22,7 +22,7 @@ const CATEGORIAS = [
   },
   {
     title: "Motos",
-    brands: "Moura, Route, Heliar e Pioneiro",
+    brands: "Moura, Heliar, Tudor e mais...",
     image:
       "/Moto.png", // Moto
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",

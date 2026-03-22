@@ -7,7 +7,7 @@ const FEATURES = [
   {
     icon: Truck,
     title: "Frete grátis",
-    description: "Para toda região do centro",
+    description: "Para região de Pedro Leopoldo",
     highlight: true,
   },
   {
