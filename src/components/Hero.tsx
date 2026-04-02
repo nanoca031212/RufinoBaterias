@@ -84,7 +84,7 @@ export default function Hero() {
             animate="show"
             className="inline-flex mb-6 items-center gap-3 rounded-full border border-gold/50 bg-black/60 px-5 py-2 text-xs font-semibold text-zinc-200 backdrop-blur-sm"
           >
-            <span>Frete Gratis Para Toda Região</span>
+            <span>Frete grátis para região de Pedro Leopoldo</span>
           </motion.div>
 
           <motion.h1
