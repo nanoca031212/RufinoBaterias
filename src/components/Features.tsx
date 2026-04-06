@@ -1,7 +1,6 @@
 "use client";
 
 import { Truck, Tag, ShieldCheck, Zap } from "lucide-react";
-import { motion } from "framer-motion";
 
 const FEATURES = [
   {
@@ -36,12 +35,8 @@ export default function Features() {
       <div className="mx-auto max-w-7xl">
         <div className="bg-white rounded-[2.5rem] md:rounded-full p-3 md:p-4 shadow-2xl flex flex-col lg:flex-row lg:justify-between items-stretch lg:items-center gap-3 md:gap-4 border border-zinc-100">
           {FEATURES.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className={`flex items-center gap-4 px-6 py-4 rounded-[2rem] md:rounded-full transition-all flex-1 ${
                 feature.highlight
                   ? "bg-gold text-black shadow-lg shadow-gold/20"
@@ -65,7 +60,7 @@ export default function Features() {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

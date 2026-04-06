@@ -17,6 +17,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Rufino Baterias Pedro Leopoldo",
   description: "Baterias de alta qualidade para o seu veículo.",
+  icons: {
+    icon: "/RufinoLogoBranca.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+
 import { ArrowUpRight } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -9,22 +9,19 @@ const CATEGORIAS = [
   {
     title: "Carros",
     brands: "Moura, Zetta, Heliar e mais.",
-    image:
-      "/Carro.png", // Carro SUV/Sedan
+    image: "/Carro.png", // Carro SUV/Sedan
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",
   },
   {
     title: "Caminhonetes e veículos a diesel",
     brands: "Moura, Zetta, Heliar e mais.",
-    image:
-      "/caminhonete12.png", // Caminhão/Caminhonete
+    image: "/caminhonete12.png", // Caminhão/Caminhonete
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",
   },
   {
     title: "Motos",
     brands: "Moura, Heliar, Tudor e mais...",
-    image:
-      "/Moto.png", // Moto
+    image: "/Moto.png", // Moto
     link: "https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0",
   },
 ];
@@ -34,40 +31,21 @@ const Baterias = () => {
     <section id="baterias" className="pt-[24rem] pb-28 md:py-28 bg-white">
       <div className="mx-auto max-w-7xl px-6 text-center">
         {/* Usando centralização explicita */}
-        <motion.div
-          className="mb-16"
-          variants={staggerContainer(0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <motion.span
-            variants={fadeInUp}
-            className="inline-block px-4 py-1 rounded-full border border-[#1B1545]/30 bg-gold/5 text-[#1B1545] text-xs font-bold uppercase tracking-widest mb-4"
-          >
+        <div className="mb-16">
+          <span className="inline-block px-4 py-1 rounded-full border border-[#1B1545]/30 bg-gold/5 text-[#1B1545] text-xs font-bold uppercase tracking-widest mb-4">
             Baterias
-          </motion.span>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-zinc-900"
-          >
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900">
             Linha completa de baterias
-          </motion.h2>
-        </motion.div>
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {CATEGORIAS.map((cat, index) => (
-            <motion.a
+            <a
               href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
               className="group relative h-[500px] overflow-hidden rounded-[32px] border-2 border-gold/20 hover:border-gold transition-all cursor-pointer shadow-lg"
+              key={index}
             >
               <Image
                 src={cat.image}
@@ -84,18 +62,12 @@ const Baterias = () => {
                 </h3>
                 <p className="text-sm text-zinc-300 mb-6">{cat.brands}</p>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>
 
-      <motion.div
-        variants={fadeInUp}
-        className="text-center mt-16"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
+      <div className="text-center mt-16">
         <a
           href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
           target="_blank"
@@ -105,7 +77,7 @@ const Baterias = () => {
           Garanta sua bateria agora
           <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
-      </motion.div>
+      </div>
     </section>
   );
 };

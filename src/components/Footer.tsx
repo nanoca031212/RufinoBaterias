@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Facebook, Phone, MapPin, Mail } from "lucide-react";
+import { Instagram, MessageCircle, Phone, MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -11,7 +11,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block relative h-10 w-24 overflow-visible">
+            <Link
+              href="/"
+              className="inline-block relative h-10 w-24 overflow-visible"
+            >
               <div className="absolute inset-0 flex items-center">
                 <Image
                   src="/RufinoLogoBranca.svg"
@@ -23,26 +26,65 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs text-zinc-500">
-              Especialistas em baterias automotivas com entrega rápida e instalação profissional em toda a região.
+              Especialistas em baterias automotivas com entrega rápida e
+              instalação profissional em toda a região.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-zinc-400 hover:text-gold transition-colors">
+              <a
+                href="https://www.instagram.com/rufinobateriaspl/"
+                className="text-zinc-400 hover:text-gold transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-zinc-400 hover:text-gold transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a
+                href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-gold transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
 
           {/* Links */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-zinc-900 font-bold tracking-tight">Navegação</h4>
+            <h4 className="text-zinc-900 font-bold tracking-tight">
+              Navegação
+            </h4>
             <ul className="flex flex-col gap-3 text-sm">
-              <li><a href="#hero" className="hover:text-gold transition-colors font-medium">Início</a></li>
-              <li><a href="#baterias" className="hover:text-gold transition-colors font-medium">Baterias</a></li>
-              <li><a href="#servicos" className="hover:text-gold transition-colors font-medium">Serviços</a></li>
-              <li><a href="#entrega" className="hover:text-gold transition-colors font-medium">Entrega</a></li>
+              <li>
+                <a
+                  href="#hero"
+                  className="hover:text-gold transition-colors font-medium"
+                >
+                  Início
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#baterias"
+                  className="hover:text-gold transition-colors font-medium"
+                >
+                  Baterias
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#servicos"
+                  className="hover:text-gold transition-colors font-medium"
+                >
+                  Serviços
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#entrega"
+                  className="hover:text-gold transition-colors font-medium"
+                >
+                  Entrega
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -52,9 +94,9 @@ export default function Footer() {
             <ul className="flex flex-col gap-4 text-sm">
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gold" />
-                <a 
-                  href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0" 
-                  target="_blank" 
+                <a
+                  href="https://api.whatsapp.com/send/?phone=553196507294&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium hover:text-gold transition-colors"
                 >
@@ -63,11 +105,17 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold" />
-                <span className="font-medium">contato@rufinobaterias.com.br</span>
+                <span className="font-medium">
+                  contato@rufinobaterias.com.br
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold mt-0.5" />
-                <span className="font-medium">Praça Doutor Senra, 18 - Centro<br />Pedro leopoldo - MG</span>
+                <span className="font-medium">
+                  Praça Doutor Senra, 18 - Centro
+                  <br />
+                  Pedro leopoldo - MG
+                </span>
               </li>
             </ul>
           </div>
@@ -90,10 +138,17 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-zinc-500">
-          <p>© {new Date().getFullYear()} Rufino Baterias. Todos os direitos reservados.</p>
+          <p>
+            © {new Date().getFullYear()} Rufino Baterias. Todos os direitos
+            reservados.
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-gold transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-gold transition-colors">Termos de Uso</a>
+            <a href="#" className="hover:text-gold transition-colors">
+              Política de Privacidade
+            </a>
+            <a href="#" className="hover:text-gold transition-colors">
+              Termos de Uso
+            </a>
           </div>
         </div>
       </div>
