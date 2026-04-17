@@ -7,7 +7,7 @@ const LOGOS = [
   { src: "/carrosselLogo/MouraLogo.svg", alt: "Moura" },
   { src: "/carrosselLogo/Heliar.svg", alt: "Heliar" },
   { src: "/carrosselLogo/zetta.svg", alt: "Zetta" },
-  { src: "/carrosselLogo/Tudor.svg", alt: "Tudor" },
+
   { src: "/carrosselLogo/DelcarLogo.svg", alt: "Delcar" },
   { src: "/carrosselLogo/KondorLogo.svg", alt: "Kondor" },
 ];

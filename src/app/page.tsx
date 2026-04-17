@@ -6,6 +6,7 @@ import ComoFunciona from "@/components/ComoFunciona";
 import LogoCarousel from "@/components/LogoCarousel";
 import ServicosAdicionais from "@/components/ServicosAdicionais";
 import Testimonials from "@/components/Testimonials";
+import Faqs from "@/components/Faqs";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <LogoCarousel />
         <ComoFunciona />
         <Testimonials />
+        <Faqs />
         <Footer />
       </main>
     </>
